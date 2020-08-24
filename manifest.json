@@ -6,7 +6,6 @@
   "content_scripts": [
     {
       "js": ["contentscript.js"],
-      "css": ["contentscript.css"],
       "matches": ["<all_urls>"]
     }
   ],
@@ -14,9 +13,16 @@
     "scripts": ["background.js"],
     "persistent": false
   },
+  "icons": {
+    "16": "public/logo16.png",
+    "48": "public/logo48.png",
+    "128": "public/logo128.png"
+  },
   "browser_action": {
-    "default_popup": "popup/index.html",
     "default_title": "100 Reasons why I love you"
+  },
+  "chrome_url_overrides": {
+    "newtab": "popup/index.html"
   },
   "web_accessible_resources": ["assets/*"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
