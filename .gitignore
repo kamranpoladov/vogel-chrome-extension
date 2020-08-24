@@ -1,0 +1,4 @@
+node_modules
+dist
+.env
+src/popup/node_modules
