@@ -14,9 +14,9 @@
     "persistent": false
   },
   "icons": {
-    "16": "public/logo16.png",
-    "48": "public/logo48.png",
-    "128": "public/logo128.png"
+    "16": "public/heart-logo.png",
+    "48": "public/heart-logo.png",
+    "128": "public/heart-logo.png"
   },
   "browser_action": {
     "default_title": "100 Reasons why I love you"
