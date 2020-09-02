@@ -14,7 +14,7 @@ const Clock = () => {
     <div className="clock">
       <div className="clock__time">{time.format("HH:mm")}</div>
       <div className="break"></div>
-      <div className="clock__date">{time.format("dddd, DD MMMM, YYYY")}</div>
+      <div className="clock__date">{time.format("dd, DD MMM")}</div>
     </div>
   );
 };

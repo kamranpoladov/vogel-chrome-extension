@@ -1,17 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Overlock:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap");
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  background: url("../../img/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .clock {
+  color: black;
+  font-family: "Overlock", cursive;
   &__time {
-    font-size: 2rem;
+    font-size: 3vw;
   }
 
   &__date {
-    font-size: 2rem;
+    font-size: 2vw;
+  }
+}
+
+.reason {
+  font-family: "Overlock", cursive;
+  &--text {
+    font-size: 3vw;
+  }
+}
+
+.picture {
+  &--image {
+    border: 1vw solid white;
+  }
+}
+
+.greeting {
+  &--text {
+    font-family: "Rouge Script", cursive;
+    font-size: 5.5vw;
   }
 }

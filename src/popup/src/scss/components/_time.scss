@@ -1,6 +1,17 @@
 .clock {
-  color: red;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
+  width: 15vw;
+  padding: 0 1vw 1vw 1vw;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background-color: rgba(246, 255, 221, 1);
+  border-radius: 3vw;
+
+  &__time {
+    border-bottom: 1px solid black;
+  }
+
+  &__date {
+    padding-top: 0.5vw;
+  }
 }
