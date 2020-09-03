@@ -3,7 +3,13 @@
     position: absolute;
     left: 8vw;
     top: 5vw;
-    height: auto;
-    width: 30vw;
+    max-height: 80vh;
+    max-width: 35vw;
+  }
+
+  &--load {
+    position: absolute;
+    left: 8vw;
+    top: 2vw;
   }
 }

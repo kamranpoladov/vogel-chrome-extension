@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "100 Reasons why I love you",
+  "name": "Vogel",
   "version": "1.0.0",
   "permissions": ["tabs", "activeTab", "storage"],
   "content_scripts": [
@@ -19,7 +19,7 @@
     "128": "public/heart-logo.png"
   },
   "browser_action": {
-    "default_title": "100 Reasons why I love you"
+    "default_title": "Vogel"
   },
   "chrome_url_overrides": {
     "newtab": "popup/index.html"

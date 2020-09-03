@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
 import getPicture from "./utils/getPicture";
 import btoa from "btoa";
 import moment from "moment";
@@ -8,10 +6,12 @@ import checkPictureDate from "./utils/checkPictureDate";
 
 const Picture = () => {
   const [picture, setPicture] = useState<string>("");
-
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasLoaded, setHasLoaded] = useState<boolean>(false);
   useEffect(() => {
     if (checkPictureDate(localStorage.getItem("vogel-picture"))) {
       (async () => {
+        setIsLoading(true);
         const buffer = await getPicture();
         const typedArray = new Uint8Array(buffer);
         const stringChar = typedArray.reduce(
@@ -24,6 +24,8 @@ const Picture = () => {
           JSON.stringify({ time: moment(), img: base64 })
         );
         setPicture(base64);
+        setIsLoading(false);
+        setHasLoaded(true);
       })();
     }
   }, []);
@@ -33,15 +35,21 @@ const Picture = () => {
       const base64 = JSON.parse(localStorage.getItem("vogel-picture") || "")
         .img;
       setPicture(base64);
+      setHasLoaded(true);
     }
   }, []);
 
   return (
     <div className="picture">
-      <img
-        className="picture--image"
-        src={`data:image/jpeg;base64,${picture}`}
-      />
+      {isLoading && (
+        <p className="picture--load">Wait for a new picture to load...</p>
+      )}
+      {hasLoaded && (
+        <img
+          className="picture--image"
+          src={`data:image/jpeg;base64,${picture}`}
+        />
+      )}
     </div>
   );
 };

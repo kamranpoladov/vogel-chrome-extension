@@ -4,9 +4,7 @@ const checkPictureDate = (jsonString: string | null): boolean => {
   if (!jsonString) return true;
 
   const { time } = JSON.parse(jsonString);
-  const isSame = moment().isSame(time, "second");
-
-  return !isSame;
+  return moment.duration(moment().diff(time)).asHours() >= 6;
 };
 
 export default checkPictureDate;
