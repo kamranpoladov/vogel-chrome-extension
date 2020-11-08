@@ -12,11 +12,11 @@ const Reason = () => {
       (async () => {
         setIsLoading(true);
         const fetchedReason = await getReason();
+        setReason(fetchedReason);
         localStorage.setItem(
           "vogel-reason",
           JSON.stringify({ reason: fetchedReason, time: moment() })
         );
-        setReason(fetchedReason);
         setIsLoading(false);
       })();
     } else {
